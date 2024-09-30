@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chemical Supplies</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- Include Font Awesome CDN -->
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/fontawesome.min.css">
+   
+    
+</head>
+<body>
+    <div class="container mt-4">
+        <div class="head">
+        <h2>Chemical Supplies</h2>
+        <div class="table-toolbar mb-3">
+            <button class="btn btn-primary" onclick="addRow()">
+                <i class="fas fa-plus"></i>
+            </button>
+            <button class="btn btn-secondary" onclick="moveRowUp()">
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            <button class="btn btn-secondary" onclick="moveRowDown()">
+                <i class="fas fa-arrow-down"></i>
+            </button>
+            <button class="btn btn-danger" onclick="deleteRow()">
+                <i class="fas fa-trash"></i>
+            </button>
+            <button class="btn btn-info" onclick="refreshTable()">
+                <i class="fas fa-sync-alt"></i>
+            </button>
+            <button class="btn btn-success" onclick="saveTable()">
+                <i class="fas fa-save"></i>
+            </button>
+        </div>
+    </div>
+        <!-- Modal for Editing Rows -->
+        <div id="editModal" class="modal" tabindex="-1">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Edit Row</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="editForm">
+                            <div class="mb-3">
+                                <label for="editChemicalName" class="form-label">Chemical Name</label>
+                                <input type="text" class="form-control" id="editChemicalName">
+                            </div>
+                            <div class="mb-3">
+                                <label for="editVendor" class="form-label">Vendor</label>
+                                <input type="text" class="form-control" id="editVendor">
+                            </div>
+                            <div class="mb-3">
+                                <label for="editDensity" class="form-label">Density</label>
+                                <input type="number" class="form-control" id="editDensity">
+                            </div>
+                            <div class="mb-3">
+                                <label for="editViscosity" class="form-label">Viscosity</label>
+                                <input type="number" class="form-control" id="editViscosity">
+                            </div>
+                            <div class="mb-3">
+                                <label for="editPackaging" class="form-label">Packaging</label>
+                                <input type="text" class="form-control" id="editPackaging">
+                            </div>
+                            <div class="mb-3">
+                                <label for="editPackSize" class="form-label">Pack Size</label>
+                                <input type="number" class="form-control" id="editPackSize">
+                            </div>
+                            <div class="mb-3">
+                                <label for="editUnit" class="form-label">Unit</label>
+                                <input type="text" class="form-control" id="editUnit">
+                            </div>
+                            <div class="mb-3">
+                                <label for="editQuantity" class="form-label">Quantity</label>
+                                <input type="number" class="form-control" id="editQuantity">
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" onclick="saveEdit()">Save changes</button>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <table id="chemicalTable" class="table table-striped">
+            <thead>
+                <tr>
+                    <th onclick="sortTable(0)">ID</th>
+                    <th onclick="sortTable(1)">Chemical Name</th>
+                    <th onclick="sortTable(2)">Vendor</th>
+                    <th onclick="sortTable(3)">Density</th>
+                    <th onclick="sortTable(4)">Viscosity</th>
+                    <th onclick="sortTable(5)">Packaging</th>
+                    <th onclick="sortTable(6)">Pack Size</th>
+                    <th onclick="sortTable(7)">Unit</th>
+                    <th onclick="sortTable(8)">Quantity</th>
+                    <th>Edit</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div>
+
+    <script src="js/script.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script> 
+</body>
+</html>

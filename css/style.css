@@ -1,0 +1,65 @@
+/* General styles */
+body {
+    font-family: Arial, sans-serif;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.head {
+    display: flex;
+    gap:56%;
+}
+
+.table-toolbar {
+    display: flex;
+    flex-wrap: wrap; /* Allow wrapping of buttons */
+    gap: 10px; /* Space between buttons */
+    justify-content: center; /* Center buttons */
+    margin-bottom: 20px;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+th {
+    cursor: pointer;
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+    table {
+        display: block; /* Allow the table to scroll */
+        overflow-x: auto; /* Enable horizontal scrolling */
+        white-space: nowrap; /* Prevent text wrapping */
+    }
+
+    tr {
+        display: flex;
+        flex-direction: column; /* Stack rows vertically */
+        margin-bottom: 10px; /* Space between rows */
+    }
+
+    th, td {
+        display: block; /* Stack header and data cells */
+        text-align: left; /* Align text to the left */
+    }
+
+    th {
+        background-color: #f8f9fa; /* Light background for headers */
+    }
+}
+
+/* Selected row styling */
+tr.selected {
+    background-color: #afcbed;
+}
+
+.modal-body {
+    display: flex;
+    flex-direction: column;
+}
