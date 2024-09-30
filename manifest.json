@@ -1,7 +1,7 @@
 {
     "name": "Chemical Supplies",
     "short_name": "Chem Supplies",
-    "start_url": ".",
+    "start_url": "https://harshsingh-31.github.io/Chemical-Supplies-application/",
     "display": "standalone",
     "background_color": "#ffffff",
     "theme_color": "#317EFB",
